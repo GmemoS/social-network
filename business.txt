@@ -1,0 +1,3 @@
+- Users can't follow themselves 
+- Content can't be empty
+- Timeline shows most recent publications first
