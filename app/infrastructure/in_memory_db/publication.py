@@ -59,6 +59,6 @@ class InMemoryPublicationRepository(PublicationRepository):
             for pub_id in self.user_publications.get(user_id, [])
         ]
 
-        return sorted(result, key=lambda t: t.timestamp, reverse=True)[
+        return sorted(result, key=lambda t: t.created_at, reverse=True)[
             :limit
         ]
