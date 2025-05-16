@@ -1,0 +1,5 @@
+.dockerignore
+.gitignore
+Dockerfile
+business.txt
+README.md
