@@ -1,3 +1,4 @@
-- Users can't follow themselves 
-- Content can't be empty
-- Timeline shows most recent publications first
+- Users can't follow themselves
+- Publication conent cannot be empty
+- Timelines show the most recent added publications first
+- Users will see publications from a user they follow from the moment they start following, so the older ones won't be shown in their timeline
