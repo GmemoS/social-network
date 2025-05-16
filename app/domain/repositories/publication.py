@@ -9,11 +9,11 @@ class PublicationRepository(ABC):
         pass
 
     @abstractmethod
-    def get_by_user_id(self, user_id: str) -> list[Publication]:
+    def get_by_id(self, publication_id: str) -> Publication:
         pass
 
     @abstractmethod
-    def get_by_user_ids(
-        self, user_ids: list[str], limit: int = 100
+    def get_by_user_id(
+        self, user_id: str, limit: int = 100
     ) -> list[Publication]:
         pass

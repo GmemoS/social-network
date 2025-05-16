@@ -9,5 +9,5 @@ class FollowRepository(ABC):
         pass
 
     @abstractmethod
-    def get_followee_ids(self, follower_id: str) -> list[str]:
+    def get_followers_ids(self, user_id: str) -> list[str]:
         pass

@@ -1,7 +1,9 @@
 class User:
     __slots__ = ('id', 'username', 'email', 'name')
 
-    def __init__(self, id: str, username: str, email: str, name: str):
+    def __init__(
+        self, id: str, username: str, email: str, name: str
+    ) -> None:
         self.id = id
         self.username = username
         self.email = email

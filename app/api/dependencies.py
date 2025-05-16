@@ -9,6 +9,9 @@ from app.infrastructure.in_memory_db.follow import (
 from app.infrastructure.in_memory_db.publication import (
     InMemoryPublicationRepository,
 )
+from app.infrastructure.in_memory_db.timeline import (
+    InMemoryTimelineRepository,
+)
 
 
 def get_publication_repository(
@@ -39,15 +42,18 @@ def setup_dependencies(app: FastAPI) -> None:
     # Repositories
     publication_repository = InMemoryPublicationRepository()
     follow_repository = InMemoryFollowRepository()
+    timeline_repository = InMemoryTimelineRepository()
 
     app.state.publication_repository = publication_repository
     app.state.follow_repository = follow_repository
 
     # Use cases
     app.state.publication_use_case = PublicationUseCase(
-        publication_repository
+        publication_repository,
+        follow_repository,
+        timeline_repository,
     )
     app.state.follow_use_case = FollowUseCase(follow_repository)
     app.state.timeline_use_case = TimelineUseCase(
-        follow_repository, publication_repository
+        timeline_repository, follow_repository, publication_repository
     )
