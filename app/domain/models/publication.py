@@ -8,7 +8,7 @@ class Publication(BaseModel):
     id: str | None = Field(default=None)
     user_id: str
     content: str
-    timestamp: datetime | None = Field(
+    created_at: datetime | None = Field(
         default_factory=lambda: datetime.now(timezoneUTC)
     )
 

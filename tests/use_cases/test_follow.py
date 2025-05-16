@@ -29,18 +29,18 @@ class TestFollowUseCase(TestCase):
 
         self.assertEqual(follow_result, follow_instance)
 
-    def test_get_followee_ids(self):
-        follower_id = "user1"
-        followee_ids = ["user2", "user3"]
+    def test_get_followers_ids(self):
+        user_id = "user1"
+        follower_ids = ["user2", "user3"]
 
-        self.mock_repository.get_followee_ids.return_value = (
-            followee_ids
+        self.mock_repository.get_followers_ids.return_value = (
+            follower_ids
         )
 
-        result = self.use_case.get_followee_ids(follower_id)
+        result = self.use_case.get_followers_ids(user_id)
 
-        self.mock_repository.get_followee_ids.assert_called_once_with(
-            follower_id
+        self.mock_repository.get_followers_ids.assert_called_once_with(
+            user_id
         )
 
-        self.assertEqual(result, followee_ids)
+        self.assertEqual(result, follower_ids)
